@@ -5,6 +5,36 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
-  }
+    "c3": "^0.4.11",
+    "d3": "^4.2.0",
+    "leaflet": "^0.7.7",
+    "leaflet.markercluster": "^0.5.0",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.14.1",
+    "particles.js": "^2.0.0",
+    "underscore": "^1.8.3"
+  },
+  "description": "A visualisation of the importance of STEM education for Australia's future",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danwild/stem-australia.git"
+  },
+  "keywords": [
+    "STEM",
+    "Australia",
+    "Technology",
+    "Science",
+    "Engineering",
+    "Maths",
+    "MeteorJS",
+    "D3.js"
+  ],
+  "author": "danwild@y7mail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danwild/stem-australia/issues"
+  },
+  "homepage": "https://github.com/danwild/stem-australia#readme"
 }

@@ -1,0 +1,3 @@
+Template.energy.events({
+
+});

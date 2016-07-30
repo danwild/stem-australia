@@ -1,0 +1,154 @@
+@import '../theme/colors';
+@import '../theme/globals';
+
+
+/* ---------------------- FOUNDATION -----------------------*/
+
+.off-canvas-wrapper, .off-canvas-wrapper-inner, .off-canvas-content {
+  height: 100%;
+}
+
+.off-canvas-content, .off-canvas-content {
+  box-shadow: none;
+}
+
+// don't focus modal container on open..
+.reveal:focus {
+  outline: 0;
+}
+
+.reveal-overlay {
+  cursor: auto;
+}
+
+// foundation bug, they sit behind reveal modals
+.tooltip {
+  z-index: 9999 !important;
+}
+
+
+/* ---------------------- LEAFLET -----------------------*/
+
+.leaflet-bar {
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+.leaflet-draw-toolbar a {
+  background-image: none !important;
+}
+
+.leaflet-control a, .leaflet-control a:hover {
+  border-radius: 0 !important;
+  background: @darkGrey !important;
+  color: @offWhite !important;
+  font-size: 26px !important;
+  width: 35px !important;
+  height: 35px !important;
+  line-height: 31px !important;
+}
+
+.leaflet-control a:hover {
+  background: @darkGrey !important;
+  color: @lightBlue !important;
+}
+
+.leaflet-control-layers {
+  border-radius: 0 !important;
+  background: @offWhite !important;
+  color: @darkGrey !important;
+  padding: 10px;
+}
+
+.leaflet-bottom {
+  bottom: @headerHeight !important;
+  //transition: bottom 0.5s ease;
+  z-index: 0;
+}
+
+// data > attribution
+.leaflet-bottom.leaflet-left {
+  z-index: 1001;
+}
+
+.leaflet-control-mouseposition, .leaflet-control-wind-position {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+// stop inherit foundation
+.leaflet-control-attribution a, .leaflet-control-attribution a:hover {
+  all: unset !important;
+}
+
+.leaflet-control-layers-selector {
+  margin-bottom: 5px !important;
+}
+
+.leaflet-left .leaflet-control-mouseposition {
+  margin-left: 0px !important;
+}
+
+.leaflet-top {
+  top: @headerHeight !important;
+}
+
+.leaflet-bottom .leaflet-control-mouseposition {
+  margin-bottom: 0px !important;
+}
+
+// override leaflet-draw styles
+.leaflet-draw-draw-rectangle:before {
+  content: '\f096'; //rectangle..
+  //content: '\f125'; // crop
+  font-family: FontAwesome;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.leaflet-draw-edit-edit:before {
+  content: '\f044';
+  font-family: FontAwesome;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.leaflet-draw-edit-remove:before {
+  content: '\f014';
+  font-family: FontAwesome;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.leaflet-draw-actions {
+
+  left: 45px !important;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+
+  li a, li a:hover {
+    font-size: 14px !important;
+    line-height: 34px !important;
+    width: auto !important;
+  }
+}
+
+// leaflet-loading
+.leaflet-control-loading {
+  background-image: none;
+}
+
+.leaflet-control-loading:before {
+  content: '\f1ce';
+  font-family: FontAwesome;
+  font-size: 20px;
+  line-height: 35px;
+  display: block;
+  position: relative;
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+// Leaflet.vector-markers
+.vector-marker-shadow {
+  display: none !important;
+}
+

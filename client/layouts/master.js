@@ -1,0 +1,4 @@
+Template.masterlayout.onRendered(function(){
+
+
+});

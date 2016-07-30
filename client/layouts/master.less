@@ -1,0 +1,183 @@
+@import '../theme/colors';
+@import '../theme/globals';
+
+html, body, main {
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+}
+
+body, p, span, ul, ol, h1, h1, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  color: @offWhite;
+}
+
+h1 {
+  color: @offWhite !important;
+}
+
+header, footer {
+  width: 100%;
+  height: @headerHeight;
+  background: @darkGrey;
+  color: @darkGrey;
+  font-size: 20px;
+  line-height: 1;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding-top: 7px;
+}
+
+header {
+  padding: 7px 0px 20px 0px;
+  top: 0px;
+  position: absolute;
+  z-index: 1;
+  color: @offWhite;
+
+  .title {
+    margin-top: 9px;
+
+    small {
+      color: @lightGrey;
+      font-size: 10px;
+    }
+  }
+
+  div.text-right {
+    padding-right: 10px;
+  }
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.bg-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-cover-blue {
+  background: #1976D2;
+}
+
+.bg-cover-green {
+  background: #009688;
+}
+
+.page {
+  margin-top: 55px;
+}
+
+.white-button {
+  color: #FFF !important;
+  border-color: #FFF !important;
+}
+
+.story-section {
+  margin-top: -@headerHeight;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .5s ease;
+}
+
+.show-section {
+  opacity: 1;
+  z-index: 1;
+}
+
+.center-controls {
+  position: absolute;
+  top: 45%;
+}
+
+.center-controls-left {
+  left: 5px;
+}
+
+.center-controls-right {
+  right: 5px;
+}
+
+/*---------------- MAIN NAV ----------*/
+
+.nav {
+
+  a.button {
+    background-color: @darkGrey;
+    color: @offWhite;
+    border: 1px solid @offWhite;
+  }
+
+  a.active {
+    background: none;
+    border: none;
+    pointer-events: none;
+    cursor: auto;
+  }
+
+  a.active:focus {
+    background: none;
+  }
+}
+
+/*---------------- MOBILE NAV ----------*/
+
+#offCanvas {
+  height: 100%;
+  background: @lightGrey;
+
+  div.menu {
+    margin-top: 55px;
+
+    a.button {
+      display: block;
+    }
+  }
+
+  .close-button {
+    color: @offWhite;
+  }
+}
+
+/*---------------- GENERAL ----------*/
+
+.h100 {
+  height: 100%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.center-block {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.disabled, .leaflet-disabled {
+  opacity: 0.2;
+  cursor: not-allowed !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.visibility-hide {
+  visibility: hidden;
+}
+

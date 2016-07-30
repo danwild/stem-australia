@@ -1,0 +1,77 @@
+<template name="masterlayout">
+
+	<div class="{{#if isDesktop}}vp-desktop{{else}}vp-restricted{{/if}} h100">
+
+		<div class="off-canvas-wrapper">
+			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+				<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-position="right">
+
+					<button class="close-button" aria-label="Close menu" type="button" data-close>
+						<span aria-hidden="true">&times;</span>
+					</button>
+
+					<div class="vertical menu">
+						{{>nav}}
+					</div>
+
+				</div>
+
+				<div class="off-canvas-content" data-off-canvas-content>
+					{{> masterheader}}
+					{{> mastercontent}}
+					{{> masterfooter}}
+					{{>loadingSpinnerFullScreen}}
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</template>
+
+<template name="masterheader">
+
+	<header>
+
+		<!--{{#if isRoute 'home' }}{{else}}-->
+
+			<div class="large-4 medium-5 small-4 columns title" style="padding-left: 10px;">
+				<span class="show-for-medium">STEM, AUSTRALIA</span>
+			</div>
+
+			<div class="show-for-large large-8 columns text-right">
+				{{>nav}}
+			</div>
+
+		<!--{{/if}}-->
+
+		<div class="hide-for-large small-4 medium-2 columns text-right {{#if isRoute 'home' }}{{else}}small-offset-4 medium-offset-4 large-offset-4{{/if}}">
+			<span>
+				<button type="button" class="button secondary" data-toggle="offCanvas">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+			</span>
+		</div>
+
+	</header>
+
+</template>
+
+<template name="mastercontent">
+	<main>
+		{{> yield}}
+		{{> sAlert}}
+	</main>
+</template>
+
+<template name="masterfooter">
+
+	<footer>
+
+		<!--<a href="{{pathFor 'home'}}" class="button secondary {{#if isRoute 'home' }}active{{else}}{{/if}}">-->
+			<!--do a thing..-->
+		<!--</a>-->
+
+	</footer>
+
+</template>

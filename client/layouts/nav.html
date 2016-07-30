@@ -1,0 +1,19 @@
+<template name="nav">
+	<span class="nav">
+		<a href="{{pathFor 'home'}}" class="button secondary {{#if isRoute 'home' }}active{{else}}{{/if}}">
+			home
+		</a>
+		<a href="{{pathFor 'climate'}}" class="button secondary {{#if isRoute 'climate' }}active{{else}}{{/if}}">
+			climate
+		</a>
+		<a href="{{pathFor 'energy'}}" class="button secondary {{#if isRoute 'energy' }}active{{else}}{{/if}}">
+			energy
+		</a>
+		<a href="{{pathFor 'resources'}}" class="button secondary {{#if isRoute 'resources' }}active{{else}}{{/if}}">
+			resources
+		</a>
+		<!--<a href="{{pathFor 'biodiversity'}}" class="button secondary {{#if isRoute 'biodiversity' }}active{{else}}{{/if}}">-->
+			<!--biodiversity-->
+		<!--</a>-->
+	</span>
+</template>

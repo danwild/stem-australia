@@ -1,0 +1,47 @@
+@import '../../theme/globals';
+@import '../../theme/colors';
+
+.climate {
+  background: #1976D2;
+}
+
+#climate-map {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+  z-index: 0;
+}
+
+.chart-panel {
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  bottom: -1000px;
+  transition: bottom 0.5s ease;
+  z-index: 2;
+  background: #333;
+  padding: 30px 10px 10px 10px;
+  overflow-y: auto;
+}
+
+.chart-panel.active {
+  bottom: 0px !important;
+}
+
+.close-climate-chart {
+  color: @offWhite;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  float: right;
+  font-size: 50px;
+  margin-top: -35px;
+}
+
+.c3-axis {
+  font-size: 16px;
+}
+
+.c3-axis-y text, .c3-axis-x text, .c3-legend-item {
+  fill: @offWhite;
+}
