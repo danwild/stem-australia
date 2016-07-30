@@ -38,9 +38,7 @@ Template.energy.helpers({
 });
 
 Template.energy.onRendered(function(){
-
 	Energy.initGraphs();
-
 });
 
 Energy = {
