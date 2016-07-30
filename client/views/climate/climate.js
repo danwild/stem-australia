@@ -2,7 +2,6 @@ import moment from 'moment';
 import leaflet from 'leaflet';
 import c3 from 'c3';
 
-//var points = require("/public/raw-clusters.json");
 var points = require("/public/stations.json");
 
 L.Icon.Default.imagePath = '/leaflet';

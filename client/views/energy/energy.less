@@ -3,4 +3,43 @@
 
 .energy {
 
+  .graph-switch {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -50px;
+  }
+
+  .switch-paddle {
+    background: @errorRed;
+  }
+
+  .switch.large .switch-paddle {
+    width: 7rem !important;
+  }
+
+  .switch.large input:checked ~ .switch-paddle::after {
+    left: 4.7rem !important;
+  }
+
+  .chart-panel {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    text-align: center;
+    top: 30%;
+
+    a {
+      color: @offWhite;
+    }
+
+  }
+
+  #usage-chart, #supply-chart {
+    width: 100%;
+  }
+
+  .c3-tooltip-container {
+    top: -200px !important;
+  }
 }
