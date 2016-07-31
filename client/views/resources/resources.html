@@ -29,14 +29,36 @@
 			<div class="story-section {{#if active 'GRAPH'}}show-section{{/if}}">
 
 				<div id="population-tally">
+
 					<div class="cell divider">
-						<h2>births</h2>
+						<h2 title="Combined births in Australia with international migration net gains">births*</h2>
 						<p class="tally">{{births}}</p>
 					</div>
 					<div class="cell">
 						<h2>deaths</h2>
 						<p class="tally">{{deaths}}</p>
 					</div>
+				</div>
+
+				<div id="population-count">
+
+					Pop: {{formatLargeNum population}}
+
+					<div class="population-speed">
+						<label>Projection speed:
+							<select class="projection-select">
+								<option value="10">x10</option>
+								<option value="1">x1</option>
+								<option value="5">x5</option>
+								<option value="10">x10</option>
+								<option value="20">x20</option>
+								<option value="50">x50</option>
+								<option value="100">x100</option>
+							</select>
+						</label>
+					</div>
+
+					<p class="time">Projection time: {{time}}</p>
 				</div>
 
 				<div id="resources-map"></div>

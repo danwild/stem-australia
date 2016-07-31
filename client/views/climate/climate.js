@@ -98,16 +98,9 @@ Climate = {
 
 	createChart: function(data){
 
-		console.log(data);
-
 		var timeCol = ['x'].concat(_.pluck(data.data, 'year'));
 		var minCol = ['Mean Min Temp (C)'].concat(_.pluck(data.data, 'min'));
 		var maxCol = ['Mean Max Temp (C)'].concat( _.pluck(data.data, 'max'));
-
-		console.log(timeCol);
-		console.log(minCol);
-		console.log(maxCol);
-
 		var chart = c3.generate({
 			bindto: '#climate-chart',
 			data: {

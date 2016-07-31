@@ -1,2 +1,2 @@
 # stem-australia
-A visualisation of the importance of STEM education for Australia's future
+A visual narrative to highlight the importance of STEM education for Australia's future.
