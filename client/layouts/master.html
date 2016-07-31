@@ -36,7 +36,7 @@
 		<!--{{#if isRoute 'home' }}{{else}}-->
 
 			<div class="large-4 medium-5 small-4 columns title" style="padding-left: 10px;">
-				<span class="show-for-medium">STEM, AUSTRALIA</span>
+				<a href="{{pathFor 'home'}}" class="show-for-medium">STEM, AUSTRALIA</a>
 			</div>
 
 			<div class="show-for-large large-8 columns text-right">
@@ -67,10 +67,8 @@
 <template name="masterfooter">
 
 	<footer>
-
-		<a href="http://data.gov.au" target="_blank"><i class="fa fa-database"></i> open data,</a>
-		<a href="https://github.com/danwild/stem-australia" target="_blank"> <i class="fa fa-github"></i> open code.</a>
-
+		<a href="https://github.com/danwild/stem-australia" target="_blank"> <i class="fa fa-github"></i> open code,</a>
+		<a href="http://data.gov.au" target="_blank"><i class="fa fa-database"></i> open data.</a>
 	</footer>
 
 </template>
