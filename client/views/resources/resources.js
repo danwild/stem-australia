@@ -1,4 +1,4 @@
-Session.set("resourcesState", "GRAPH");
+Session.set("resourcesState", "RESOURCES");
 
 Template.resources.helpers({
 
@@ -27,6 +27,17 @@ Template.resources.helpers({
 Template.resources.events({
 
 	"click .section-trigger": function (e) {
+
+		sAlert.closeAll();
+
+		if(e.target.dataset.section == "GRAPH" && !Resources.prompted){
+			Helpers.success({
+				message: "Real-time population growth simulation (x10 speed)",
+				options: { position: 'top', timeout: 5000 }
+			});
+			Resources.prompted = true;
+		}
+
 		Session.set("resourcesState", e.target.dataset.section);
 	},
 
@@ -44,6 +55,7 @@ Template.resources.onRendered(function(){
 Resources = {
 
 	map: null,
+	prompted: false,
 
 	init: function(){
 		this.initMap();

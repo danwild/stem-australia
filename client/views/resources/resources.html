@@ -7,20 +7,15 @@
 				<div class="row">
 					<div class="medium-6 medium-offset-3 columns">
 						<h1>RESOURCES</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-						<p>et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-						<button class="section-trigger hollow button white-button medium" data-section="INTRO">NEXT <i class="fa fa-chevron-right"></i></button>
-					</div>
-				</div>
-			</div>
-
-			<div class="center-block text-center story-section {{#if active 'INTRO'}}show-section{{/if}}">
-				<div class="row">
-					<div class="medium-6 medium-offset-3 columns">
-						<h1>GRAPH INTRO</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-						<p>et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-						<button class="section-trigger hollow button white-button medium" data-section="RESOURCES"><i class="fa fa-chevron-left"></i> BACK</button>
+						<p>
+							Australia's population is projected to double to 46 million by 2075
+							<a class="white-underline" target="_blank" href="http://www.abs.gov.au/ausstats/abs@.nsf/lookup/3222.0Media%20Release12012%20(base)%20to%202101">
+								(ABS) <i class="fa fa-external-link"></i>
+							</a>
+						</p>
+						<p>
+							Australia does not have a formal population policy that commits the country to a particular population target.
+						</p>
 						<button class="section-trigger hollow button white-button medium" data-section="GRAPH">NEXT <i class="fa fa-chevron-right"></i></button>
 					</div>
 				</div>
@@ -64,7 +59,7 @@
 				<div id="resources-map"></div>
 
 				<div class="center-controls center-controls-left">
-					<button class="left section-trigger hollow button white-button medium" data-section="INTRO"><i class="fa fa-chevron-left"></i> BACK</button>
+					<button class="left section-trigger hollow button white-button medium" data-section="RESOURCES"><i class="fa fa-chevron-left"></i> BACK</button>
 				</div>
 
 				<div class="center-controls center-controls-right">
@@ -77,12 +72,36 @@
 				<div class="row">
 					<div class="medium-6 medium-offset-3 columns">
 						<h1><i class="fa fa-line-chart"></i></h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-						<p>et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+						<p>
+							Australia is one of the most urbanised countries in the world.<br/>
+							Significant population growth is already creating a range of pressures in many Australian cities.
+						</p>
+						<p>
+							This is also the case across developing and advanced economies and includes public services,
+							infrastructure, housing, energy, food &amp; water supplies, and, under current policy,
+							Australia is faced with significant population growth in the foreseeable future.
+						</p>
 						<button class="section-trigger hollow button white-button medium" data-section="GRAPH"><i class="fa fa-chevron-left"></i> BACK</button>
-						<!--<a href="{{pathFor 'resources'}}" class="hollow button white-button medium">-->
-							<!--NEXT <i class="fa fa-chevron-right"></i>-->
-						<!--</a>-->
+						<button class="section-trigger hollow button white-button medium" data-section="SUMMARY2">NEXT <i class="fa fa-chevron-right"></i></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="center-block text-center story-section {{#if active 'SUMMARY2'}}show-section{{/if}}">
+				<div class="row">
+					<div class="medium-6 medium-offset-3 columns">
+						<h1><i class="fa fa-globe"></i></h1>
+						<p>
+							There are many ethical and political components to the question of how Australia manages this complex problem.
+						</p>
+						<p>
+							However; Australian's will likely lean heavily on the fruits of Science, Technology, Engineering &amp;
+							Mathematics to buy us time, and offer alternative ways to move the nation forward.
+						</p>
+						<button class="section-trigger hollow button white-button medium" data-section="GRAPH"><i class="fa fa-chevron-left"></i> BACK</button>
+						<a href="{{pathFor 'appendix'}}" class="hollow button white-button medium">
+							APPENDIX <i class="fa fa-info-circle"></i>
+						</a>
 					</div>
 				</div>
 			</div>

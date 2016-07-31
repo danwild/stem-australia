@@ -5,13 +5,14 @@ require("/node_modules/c3/c3.css");
 var supply = require("/public/generation-series.json");
 var consumption = require("/public/consumption-series.json");
 
-Session.set("energyState", "ENERGY");
+Session.set("energyState", "GRAPH");
 Session.set("energyChart", "SUPPLY");
 
 
 Template.energy.events({
 
 	"click .section-trigger": function(e) {
+		sAlert.closeAll();
 		Session.set("energyState", e.target.dataset.section);
 	},
 

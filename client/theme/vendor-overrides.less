@@ -26,6 +26,9 @@
   z-index: 9999 !important;
 }
 
+.s-alert-box-inner {
+  text-align: center;
+}
 
 /* ---------------------- LEAFLET -----------------------*/
 
@@ -94,57 +97,6 @@
 
 .leaflet-bottom .leaflet-control-mouseposition {
   margin-bottom: 0px !important;
-}
-
-// override leaflet-draw styles
-.leaflet-draw-draw-rectangle:before {
-  content: '\f096'; //rectangle..
-  //content: '\f125'; // crop
-  font-family: FontAwesome;
-  font-size: 20px;
-  line-height: 35px;
-}
-
-.leaflet-draw-edit-edit:before {
-  content: '\f044';
-  font-family: FontAwesome;
-  font-size: 20px;
-  line-height: 35px;
-}
-
-.leaflet-draw-edit-remove:before {
-  content: '\f014';
-  font-family: FontAwesome;
-  font-size: 20px;
-  line-height: 35px;
-}
-
-.leaflet-draw-actions {
-
-  left: 45px !important;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
-
-  li a, li a:hover {
-    font-size: 14px !important;
-    line-height: 34px !important;
-    width: auto !important;
-  }
-}
-
-// leaflet-loading
-.leaflet-control-loading {
-  background-image: none;
-}
-
-.leaflet-control-loading:before {
-  content: '\f1ce';
-  font-family: FontAwesome;
-  font-size: 20px;
-  line-height: 35px;
-  display: block;
-  position: relative;
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear;
 }
 
 // Leaflet.vector-markers

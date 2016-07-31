@@ -20,6 +20,7 @@ Climate = {
 
 	markers: null,
 	map: null,
+	prompted: false,
 	clicked: false,
 
 	initMap: function(){
@@ -86,7 +87,8 @@ Climate = {
 				cluster: clusterMarkers.length
 			});
 
-			if(Climate.map.getZoom() < 10){
+			if(Climate.map.getZoom() < 10 && !Climate.clicked){
+				sAlert.closeAll();
 				Helpers.info({
 					message: "Zoom in to view more cohesive clusters",
 					options: { position: 'top-left' }
@@ -123,6 +125,18 @@ Climate = {
 
 Template.climate.events({
 	"click .section-trigger": function(e){
+
+		sAlert.closeAll();
+
+		if(e.target.dataset.section == "MAP" && !Climate.prompted){
+			Helpers.info({
+				message: "Click weather stations to view annual mean air temperatures",
+				options: { position: 'top', timeout: 8000 }
+			});
+			Climate.prompted = true;
+		}
+
+
 		Session.set("climateState", e.target.dataset.section);
 	},
 
