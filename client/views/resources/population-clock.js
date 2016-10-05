@@ -28,7 +28,7 @@ var birthRate = 104;
 var deathRate = 202;
 var migrationRate = 156;
 
-var refreshSpeed = 1000;
+var refreshSpeed = 2000;
 
 //var startPopulation = 23940300;
 //var startAnchor = moment('31-12-2015 23:59:59+10:00', 'DD-MM-YYYY HH:mm:ss');
@@ -85,14 +85,18 @@ var states = [
 PopulationClock = {
 
 	baseTime: null,
-	speedMultiplier: 10,
-	projectionTime: moment(),
+	basePop: 0,
+	speedMultiplier: 18,
+	projectionTime: null,
+	reset: false,
 
 	/**
 	 * Calculate the current population, based on our anchor point
 	 *
 	 */
 	init: function(){
+
+		console.log('init');
 
 		this.baseTime = moment();
 
@@ -107,10 +111,10 @@ PopulationClock = {
 
 		Session.set("birthTotal", 0);
 		Session.set("deathTotal", 0);
+		this.basePop = startPopulation + net;
 		Session.set("populationTotal", startPopulation + net);
 
 		this.initPing();
-
 		Meteor.setTimeout(this.refresh, refreshSpeed);
 	},
 
@@ -123,21 +127,41 @@ PopulationClock = {
 	checkBirths: function(births){
 
 		var currentBirths = Session.get("birthTotal");
-		for(var i = Math.round(currentBirths); i < Math.round(births); i++){
+
+		if(Math.round(currentBirths) < Math.round(births)){
 			this.pingBirth();
 		}
 
 		Session.set("birthTotal", births);
+
+		//var currentBirths = Session.get("birthTotal");
+		//var newBirths = currentBirths + births;
+		//
+		//if(Math.round(currentBirths) < Math.round(newBirths)){
+		//	this.pingBirth();
+		//}
+		//
+		//Session.set("birthTotal", newBirths);
 	},
 
 	checkDeaths: function(deaths){
 
 		var currentDeaths = Session.get("deathTotal");
-		for(var i = Math.round(currentDeaths); i < Math.round(deaths); i++){
+
+		if(Math.round(currentDeaths) < Math.round(deaths)){
 			this.pingDeath();
 		}
 
 		Session.set("deathTotal", deaths);
+
+		//var currentDeaths = Session.get("deathTotal");
+		//var newDeaths = currentDeaths + deaths;
+		//
+		//if(Math.round(currentDeaths) < Math.round(newDeaths)){
+		//	this.pingDeath();
+		//}
+		//
+		//Session.set("deathTotal", newDeaths);
 	},
 
 	getBirthLocation: function(){
@@ -171,27 +195,36 @@ PopulationClock = {
 
 	calcPopulation: function(){
 
-		// get the no of seconds elapsed between anchor and present time
-		var secondsElapsed = moment().diff(this.baseTime, 's');
+		if(!this.projectionTime) this.projectionTime = moment();
 
-		this.projectionTime.add(secondsElapsed * this.speedMultiplier, 's');
+		// get the no of seconds elapsed between baseTime and present time
+		var secondsElapsed = Math.abs(this.projectionTime.diff(this.baseTime, 's')) + this.speedMultiplier;
+
+		// update the basetime
+		this.projectionTime.add(refreshSpeed + (this.speedMultiplier * 1000), 'ms');
+
 		Session.set("populationTime", this.projectionTime.format("DD/MM/YYYY HH:mm:ss"));
-
-		// calc additions, subtractions and set total
-		var births = secondsElapsed / (birthRate / this.speedMultiplier);
-		var deaths = secondsElapsed / (deathRate / this.speedMultiplier);
-		var migration = secondsElapsed / (migrationRate / this.speedMultiplier);
+		var births = secondsElapsed / birthRate;
+		var deaths = secondsElapsed / deathRate;
+		var migration = secondsElapsed / migrationRate;
 		var net = (births + migration) - deaths;
 
-		this.checkBirths(births);
+		this.checkBirths(births + migration);
 		this.checkDeaths(deaths);
 
-		Session.set("populationTotal", Session.get("populationTotal") + net);
+		Session.set("populationTotal", this.basePop + net);
 		Meteor.setTimeout(this.refresh, refreshSpeed);
 	},
 
 	refresh: function() {
-		PopulationClock.calcPopulation();
+		if(PopulationClock.reset){
+			PopulationClock.projectionTime = null;
+			PopulationClock.init();
+			PopulationClock.reset = false;
+		}
+		else {
+			PopulationClock.calcPopulation();
+		}
 	}
 
 };

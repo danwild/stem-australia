@@ -1,5 +1,6 @@
 Session.set("resourcesState", "RESOURCES");
 
+
 Template.resources.helpers({
 
 	active: function(section){
@@ -15,7 +16,7 @@ Template.resources.helpers({
 	},
 
 	population: function(){
-		return Math.round(Session.get("populationTotal"));
+		return Math.floor(Session.get("populationTotal"));
 	},
 
 	time: function(){
@@ -42,7 +43,8 @@ Template.resources.events({
 	},
 
 	"change .projection-select": function (e) {
-		PopulationClock.speedMultiplier = e.target.value;
+		PopulationClock.speedMultiplier = parseInt(e.target.value);
+		PopulationClock.reset = true;
 	}
 
 });

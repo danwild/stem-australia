@@ -5,7 +5,7 @@ require("/node_modules/c3/c3.css");
 var supply = require("/public/generation-series.json");
 var consumption = require("/public/consumption-series.json");
 
-Session.set("energyState", "GRAPH");
+Session.set("energyState", "ENERGY");
 Session.set("energyChart", "SUPPLY");
 
 
